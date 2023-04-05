@@ -1,5 +1,4 @@
 # DEĞİŞKENLER -START
-
 baslik = "HABERİNİZ OLSUN"  # string
 vade = 12  # int
 faizOrani = 1.47  # float
@@ -22,11 +21,9 @@ sayi2 = 50
 print(sayi1 + sayi2)
 
 print(sonucMesaj)
-
 # DEĞİŞKENLER -END
 
 # ŞART BLOĞU -START
-
 dolarDun = 7.65
 dolarBugun = 7.85
 if dolarDun > dolarBugun:
@@ -41,17 +38,14 @@ else:
 
 print("Bitti")
 
-
 # if dolarDun < dolarBugun:
 #     print("Artış oku")
 
 # if dolarDun == dolarBugun:
 #     print("Eşittir oku")
-
 # ŞART BLOĞU -END
 
 # ARRAY -START
-
 krediler = ["Hızlı Kredi", "Maaş Kredisi", "Emekli İhtiyaç Kredisi"]
 
 print(krediler)
@@ -63,11 +57,9 @@ print(len(krediler))
 
 krediler[0] = "Çabuk Kredi"
 print(krediler)
-
 # ARRAY -END
 
 # DÖNGÜLER -START
-
 for kredi in krediler:
     print(kredi)
 
@@ -84,11 +76,9 @@ for i in range(3, 10):
 
 for i in range(0, 10, 2):
     print(i)
-
 # DÖNGÜLER -END
 
 # FONKSİYONLAR -START
-
 print("--İLK SAYFA")
 
 
