@@ -1,8 +1,9 @@
 # Kullanıcıdan 10 adet sayı alalım ve bu sayılar arasından en büyük olanı kullanıcıya gösterelim.
-sayilar = []
+numbers = []
 
 for i in range(10):
-    sayi = int(input("Bir sayı giriniz:    "))
-    sayilar.append(sayi)
-print(sayilar)
-print(max(sayilar))
+    number = int(input("Bir sayı giriniz:    "))
+    numbers.append(number)
+
+print(numbers)
+print(max(numbers))
