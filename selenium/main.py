@@ -17,25 +17,37 @@ driver.get("https://www.etiya.com")
 driver.maximize_window()
 
 # defensive testing
+
+
+def wait(a, name):
+    WebDriverWait(driver, 5).until(
+        expected_conditions.visibility_of_element_located((a, name)))
+
+
 # workshop görevi => bu kısmı fonksiyon haline getir.
-WebDriverWait(driver, 5).until(
-    expected_conditions.visibility_of_element_located((By.CLASS_NAME, "lang-select")))
+# WebDriverWait(driver, 5).until(
+#     expected_conditions.visibility_of_element_located((By.CLASS_NAME, "lang-select")))
+
+
+wait(By.CLASS_NAME, "lang-select")
 languageSelector = driver.find_element(By.CLASS_NAME, "lang-select")
 languageSelector.click()
-
 
 turkishLanguage = driver.find_element(
     By.XPATH, "//*[@id='etiya']/header/div/div[2]/div[1]/div[2]/div[1]/a")
 turkishLanguage.click()
+
 searchBtn = driver.find_element(By.ID, "search-btn")
 searchBtn.click()
+
 searchInput = driver.find_element(By.ID, "search-input")
 searchInput.send_keys("merhaba")
+
 searchIcon = driver.find_element(
     By.XPATH, "//*[@id='search-box']/form/div/button")
 searchIcon.click()
 
-# ActionChains
+# ActionChains !!!!!clik yapmıyor.
 driver.get("https://www.etiya.com")
 button = driver.find_element(
     By.XPATH, "//*[@id='home-leadform']/div[1]/div[1]/span[1]")
@@ -44,15 +56,5 @@ actionChains.move_to_element(button)
 actionChains.click()
 actionChains.perform()
 ##
+
 sleep(5000)
-
-
-# form test -start
-# butonun olduğu kısma scroll yapılmalı.
-
-
-# from test - end
-
-
-# slayt button test -start
-# slatt button test -end
