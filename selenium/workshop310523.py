@@ -39,13 +39,12 @@ menuBtn = driver.find_element(By.ID, "menu")
 menuBtn.click()
 
 wait(By.XPATH, "//*[@id='menu-container']/ul/li[2]/a")
-productBtn = driver.find_element(
+products = driver.find_element(
     By.XPATH, "//*[@id='menu-container']/ul/li[2]/a")
-productBtn.click()
-chatbot = driver.find_element(By.XPATH, "//*[@id='story']/div[8]/a/div[2]")
-actionChains = ActionChains(driver)
-actionChains.move_to_element(chatbot)
-actionChains.perform()
+actChain = ActionChains(driver)
+actChain.move_to_element(products).perform()
+sleep(2)
+chatbot = driver.find_element(By.XPATH, "//*[@id='scroll2']/ul/li[11]/a")
 chatbot.click()
 # chatbot test -end
 
@@ -55,6 +54,10 @@ chatbot.click()
 # scroll down the page
 # click the Europe button. Expected results: Form screen opens.
 driver.get("https://www.etiya.com")
+
+cookie = driver.find_element(By.XPATH, "/html/body/div[7]/button")
+cookie.click()
+
 eubutton = driver.find_element(
     By.XPATH, "//*[@id='home-leadform']/div[1]/div[1]/span[1]")
 actionChains = ActionChains(driver)
@@ -66,7 +69,8 @@ eubutton.click()
 
 # form test -start
 wait(By.ID, "lead-send")
-sendBtn = driver.find_element(By.ID, "lead-send")
+sendBtn = driver.find_element(
+    By.XPATH, "//*[@id='home-leadform']/div/div[2]/form/div[6]")
 action = ActionChains(driver)
 action.move_to_element(sendBtn)
 action.perform()
@@ -83,11 +87,8 @@ titleInput.send_keys("Etiya")
 messageInput = driver.find_element(By.ID, "lead-message")
 messageInput.send_keys("Merhaba!!")
 
+sleep(2)
 sendBtn.click()
-
-# HALİT HOCAM FROM DOLUYOR AMA CLİCK YAPAMIYORUZ YARDIM EDİİİİN!!! :D
-
 # form test -end
-
 
 sleep(5000)
